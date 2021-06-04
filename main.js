@@ -1,21 +1,21 @@
 //## Task #0
 const player1 = {
   name: "Kitana",
-  hp: 120,
+  hp: 80,
   img: "http://reactmarathon-api.herokuapp.com/assets/kitana.gif",
-  weapon: "Steel fans",
+  weapon: ["Steel fans"],
   attack: () => console.log(`${player1.name} Fight...`),
 };
 
 const player2 = {
   name: "Sonya",
-  hp: 130,
+  hp: 100,
   img: "http://reactmarathon-api.herokuapp.com/assets/sonya.gif",
-  weapon: "Wind blade",
+  weapon: ["Wind blade"],
   attack: () => console.log(`${player2.name} Fight...`),
 };
 
-function createPlayer(clas, {name, img, hp}) {
+function createPlayer(clas, { name, img, hp }) {
   const $arenas = document.querySelector(".arenas");
 
   const $player1 = document.createElement("div");
@@ -33,7 +33,7 @@ function createPlayer(clas, {name, img, hp}) {
   const $live = document.createElement("div");
   $live.className = "live";
   $live.style.width = "100%";
-  $live.textContent=hp
+  $live.textContent = hp;
   $progressbar.appendChild($live);
 
   const $name = document.createElement("div");
@@ -46,7 +46,6 @@ function createPlayer(clas, {name, img, hp}) {
   $character.appendChild($img);
 }
 
-
 //## Task #2
-createPlayer('player1', player1);
-createPlayer('player2', player2);
+createPlayer("player1", player1);
+createPlayer("player2", player2);
